@@ -1,0 +1,159 @@
+{
+ "store.home": {
+      "blocks": [
+        "category-menu#fs",
+        "info-card",
+        "search-result-layout.customQuery#home"
+       ]
+    },
+    "category-menu#fs": {
+      "props": {
+        "showAllDepartments": true,
+        "showSubcategories": true,
+        "menuDisposition": "center",
+        "departments": ["20,28"],
+        "sortSubcategories": "name"
+      }
+    },
+    "vtex.menu@2.x:menu#websites": {
+      "children": [
+        "menu-item#shop"
+      ]
+    },
+    "menu-item#shop": {
+      "props": {
+        "id": "menu-item-shop",
+        "type": "custom",
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "#",
+          "noFollow": false,
+          "tagTitle": "Shop",
+          "text": "Shop"
+        },
+        "iconToTheRight": true
+      }
+    }, 
+    "info-card": {
+      "props": {
+        "isFullModeStyle": true,
+        "maxHeight": "isFullModeStyle",
+        "imageUrl": " https://maratonavirtual.s3.sa-east-1.amazonaws.com/6iibxhv7jzzdn2749uhoxub2fdjf?response-content-disposition=inline%3B%20filename%3D%22BANNER-WOOD.png%22%3B%20filename%2A%3DUTF-8%27%27BANNER-WOOD.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIRHGNFPZAGTZ7SUA%2F20210822%2Fsa-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210822T231619Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e19248f62607636ec3cd6da951c3c81f198072a11c72cfecdd74d7020229423d"
+      
+      }
+    },
+  
+      "search-result-layout.customQuery#home": {
+      "props":{
+       "querySchema":{
+        "orderByField": "OrderByTopSaleDESC",
+        "hideUmavailableItems": true,
+        "maxItemsPerPage": 10,
+        "queryField": "28",
+        "mapField": "c,c"
+         }
+       },
+       "blocks": [ "search-result-layout.desktop#fs",  "search-result-layout.mobile"]
+   },
+    "search-result-layout.desktop#fs": {
+     "children": [
+        "search-content#fs"
+       ],
+       "props": {
+       "preventRouteChange": true
+       }
+    },
+     "search-content#fs" :{
+       "blocks":[
+          "gallery#fs", "not-found"
+        ]
+    },
+    
+    "gallery#fs": {
+        "props": {
+          "layouts": [
+            {
+              "name": "grid",
+              "component": "GridSummary",
+              "itemsPerRow": {
+                "(min-width:1300px)": 2,
+                "desktop": 2,
+                "tablet": 2,
+                "phone": 1
+              }
+            },
+            {
+              "name": "list",
+              "component": "ListSummary",
+              "itemsPerRow": 1
+            }
+          ],
+          "ListSummary": "product-summary.shelf#fs",
+          "GridSummary": "product-summary.shelf#fs"
+        }
+    },
+    "product-summary.shelf#fs": {
+      "children": [
+        "modal-trigger#fs",
+        "product-summary-name",
+        "product-images#fs",
+        "vtex.product-highlights@2.x:product-highlights",    
+        "product-summary-price",
+        "add-to-cart-button#fs"
+       ]
+    },
+    "product-images#fs":{
+        "props":{
+          "shownavigationArrows": true,
+          "showPaginationDots": true
+        }
+    },
+    "vtex.product-highlights@2.x:product-highlights": { 
+        "children": ["product-highlight-text"]
+      },
+      "product-highlight-text": {
+        "props": {
+          "message": " DESAFIO TENSO "
+        }
+      },
+      "add-to-cart-button#fs":{
+          "props":{
+              "onClickBehavior": "go-to-product-page",
+              "text": "Comprar"
+        }
+    },
+    "modal-trigger#fs" :{
+        "children": [
+            "rich-text#fs",
+            "modal-layout#fs"
+        ]
+    },
+    "rich-text#fs":{
+        "props":{
+            "text": "Video desfio \n hiring coders 2021",
+            "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "font": "t-heading-4"
+        }
+    },
+    "modal-layout#fs":{
+        "children":[
+            "video#fs"
+        ]
+
+    },
+    "video#fs":{
+        "props": {
+        "width": "100%",
+        "height": "600px",
+        "loop": false,
+        "autoPlay": true,
+        "muted": false,
+        "src": "https://www.youtube.com/watch?v=rjtei8aU8wI&t=243s",
+        "blockClass": "videoEl"
+    
+      
+    }
+  }
+}
